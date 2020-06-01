@@ -1,0 +1,9 @@
+Questions
+
+1) Which are valid:
+
+A) var x = "Hello";
+B) var x [] = new int[10];
+C) public static void counter(var p) {}
+D) public var x = "Hello";
+E) for (var x : myList)
