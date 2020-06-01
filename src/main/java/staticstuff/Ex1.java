@@ -19,7 +19,7 @@ public class Ex1 {
     System.out.println(a.value);
 
     System.out.println(a.getClass().getName());
-    
+
     // generate NPE using static field
 //    System.out.println("Length of name in X is " + X.name.length());
   }
