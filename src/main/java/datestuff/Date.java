@@ -1,6 +1,17 @@
 package datestuff;
 
 import java.time.LocalDate;
+class Holiday extends Date {
+  private String name;
+  public Holiday(int d, int m, int y, String name) {
+    super(d, m, y);
+    this.name = name;
+  }
+
+  public String toString() {
+    return "Holiday named " + this.name + super.toString();
+  }
+}
 
 public class Date {
   int day;
@@ -35,13 +46,20 @@ public class Date {
   }
 
   public int dayOfWeek(Date this) {
-    return dayOfWeek(this.day, this.month, this.year);
+//    return dayOfWeek(this.day, this.month, this.year);
+    int day = 0;
+    return dayOfWeek(this.day, month, year);
   }
+
+  public String toString() {
+    return "Date with day = " + this.day;
+  }
+
 
   public static void main(String[] args) {
     System.out.println("Is 2000 a leap year? " + isLeap(2000));
     System.out.println("Day of week of Jan 1, 2000? "
-        + dayOfWeek(1, 1, 2000));
+        + Date.dayOfWeek(1, 1, 2000));
     System.out.println("Day of week of Jan 1, 2000? "
         + dayOfWeek(new Date(1, 1, 2000)));
     System.out.println("Day of week of Jan 1, 2000? "
@@ -50,5 +68,11 @@ public class Date {
     Date theDate = new Date(1, 1, 2000);
     System.out.println("Day of week of Jan 1, 2000? "
         + theDate.dayOfWeek());
+
+    System.out.println("theDate is " + theDate.toString());
+    System.out.println("theDate is " + theDate);
+
+    Date h = new Holiday(1, 1, 2000, "new years day");
+    System.out.println("theDate is " + h.toString());
   }
 }

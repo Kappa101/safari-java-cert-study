@@ -7,3 +7,10 @@ B) var x [] = new int[10];
 C) public static void counter(var p) {}
 D) public var x = "Hello";
 E) for (var x : myList)
+
+
+2) What is the output of toString on h:
+
+A) Crash
+B) Date...
+C) Holiday ...
