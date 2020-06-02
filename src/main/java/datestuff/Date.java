@@ -3,6 +3,10 @@ package datestuff;
 import java.time.LocalDate;
 class Holiday extends Date {
   private String name;
+  public Holiday(int d, int m, String name) {
+    this(d, m, 2020, name);
+  }
+
   public Holiday(int d, int m, int y, String name) {
     super(d, m, y);
     this.name = name;
