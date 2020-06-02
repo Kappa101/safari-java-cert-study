@@ -114,6 +114,10 @@ class Base {
 }
 and:
 class Sub extends Base { // line n1
+// implicitly contains
+//  Sub() {
+//    super();
+//  }
 }
 and:
 Base b = new Sub(); // line n2
