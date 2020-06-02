@@ -95,3 +95,46 @@ What is the result?
     C) doBaseStuff
     D) Exception at runtime
     E) Compilation failure
+
+6) Given:
+    Base b = new Sub();
+    ((Runnable)b).run();
+
+What is the result?
+    A) the "run" method executes
+    B) doOtherStuff
+    C) doBaseStuff
+    D) Exception at runtime
+    E) Compilation failure
+
+7) Given:
+class Base {
+  int x;
+  Base(int x) { this.x = x; }
+}
+and:
+class Sub extends Base { // line n1
+}
+and:
+Base b = new Sub(); // line n2
+System.out.println(b.x);
+
+What is the result?
+A) 0
+B) an undefined number
+C) Exception at runtime
+D) Compilation fails at line n1
+E) Compilation fails at line n2
+
+8) Given
+
+int x;
+int y = 99;
+if (y > 50) x = 10;
+sout("x is " + x);
+
+What is the result?
+A) x is 10
+B) x is 0
+C) Exception
+D) Compilation failure
