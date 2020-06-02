@@ -142,3 +142,84 @@ A) x is 10
 B) x is 0
 C) Exception
 D) Compilation failure
+
+9) Given:
+
+class Base {
+ private Base() {}
+}
+
+Which are true?
+A) a call to new Base() will invoke the constructor of Object with no arguments
+B) A subclass of Base must have constructor(s) that invoke super() with no arguments
+C) Base cannot be subclassed
+D) Base does not compile
+
+10) Given:
+class Base {
+    void doBaseStuff() {
+      System.out.println("doBaseStuff");
+    }
+}
+
+class Sub extends Base {
+    void doBaseStuff() {
+      System.out.println("doSubStuff");
+    }
+    void doOtherStuff() {
+      System.out.println("doOtherStuff");
+    }
+}
+
+In the Base and Sub classes, which are true in isolation?
+    A) doBaseStuff in Base can be marked public without causing errors
+    B) doBaseStuff in Base can be marked private without causing errors
+    C) doBaseStuff in Sub can be marked public without causing errors
+    D) doBaseStuff in Sub can be marked protected without causing errors
+    E) doBaseStuff in Sub can be marked private without causing errors
+
+11) Given:
+  class Base2 {
+    void doBaseStuff() {
+      System.out.println("doBaseStuff");
+    }
+  }
+and:
+  class Sub2 extends Base2 {
+    void doBaseStuff(int x) {
+      System.out.println("doSubStuff");
+    }
+  }
+In the Base2 and Sub2 classes, which are true in isolation?
+    A) doBaseStuff in Base2 can be marked public without causing errors
+    B) doBaseStuff in Base2 can be marked private without causing errors
+    C) doBaseStuff in Sub2 can be marked public without causing errors
+    D) doBaseStuff in Sub2 can be marked protected without causing errors
+    E) doBaseStuff in Sub2 can be marked private without causing errors
+
+12) Given:
+  class X {
+    public int getValue() {return 1;}
+  }
+
+which of these methods may individually be added to a subclass of X?
+
+    A) public int getValue(int x) {return 1;}
+    B) public String getValue() {return "Hello";}
+    C) public String getValue(int x) {return "Hello";}
+    D) public int getValue() { return 3; }
+    E) float getValue(int x) { return 3.14F; } 
+
+13) Given:
+  class Q23Base {
+    public Q23Base get() { return null; }
+    public int getInt() { return 1; }
+  }
+  class Q23Sub extends Q23Base // class body follows ...
+
+Which methods may individually be added to Q23Sub?
+    A) public Q23Base get() { return null; }
+    B) public Q23Sub get() { return null; }
+    C) public Runnable get() { return null; }
+    D) public long getInt() { return 1; }
+    E) public short getInt() { return (short)1; }
