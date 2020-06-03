@@ -1,3 +1,0 @@
-module User {
-  requires Provider;
-}
