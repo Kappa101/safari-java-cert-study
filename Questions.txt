@@ -231,7 +231,7 @@ class Base {
     }
 }
 class Sub extends Base {
-    void doBaseStuff() {
+    void doBaseStuff() throws Exception {
       System.out.println("doSubStuff");
     }
     void doOtherStuff() {
@@ -246,3 +246,38 @@ In the Base and Sub classes, which are true in isolation?
     D) doBaseStuff in Sub can be marked throws RuntimeException without causing errors
     E) if doBaseStuff in Base were marked throws Exception,
        then doBaseStuff in Sub can be marked throws IOException without causing errors
+
+Q15) Which are correct declarations?
+
+A) Predicate<String> ps = s -> s.length();
+B) Predicate<String> ps = (s) -> { s.length() };
+C) Supplier<String> ss = () -> "";
+D) Function<String, Integer> len = (s, i) -> s.length() > i;
+E) ToLongFunction<String> len =  (String s) -> {
+      long sum = 0;
+      for (int i = 0; i < s.length(); i++) {
+        sum += s.charAt(i);
+      }
+      return sum;
+    };
+
+Q16) Which are correct declarations?
+
+A) Comparator<String> cs = s1, s2 -> s2.compareTo(s1);
+B) Comparator<String> cs = (s1, s2) -> s2.compareTo(s1);
+C) Comparator<String> cs = (var s1, String s2) -> s2.compareTo(s1);
+D) Comparator<String> cs = (var s1, s2) -> s2.compareTo(s1);
+E) Comparator<String> cs = (String s1, String s2) -> s2.compareTo(s1);
+
+Q17) Given:
+   
+   ???? (s, t) -> s.length() - t.length();
+
+Which are correct inserted in place of ????
+
+A) BiFunction<String, String, Integer> f =
+B) BiPredicate<String> f =
+C) Comparator<String> f =
+D) Supplier<String, Integer> f =
+E) BinaryOperator<String> f =
+

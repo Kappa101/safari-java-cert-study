@@ -3,6 +3,7 @@ package lambdas;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @FunctionalInterface
 interface Criterion<E> {
@@ -11,14 +12,16 @@ interface Criterion<E> {
   /*public (can be private)*/ static void doStuff() {}
   /* public */ default void doOtherStuff() {}
 }
-class SmartStudent implements Criterion<Student> {
+//class SmartStudent implements Criterion<Student> {
+class SmartStudent implements Predicate<Student> {
   @Override
   public boolean test(Student s) {
     return s.getGrade() > 60;
   }
 }
 
-class FirstHalfStudent implements Criterion<Student> {
+//class FirstHalfStudent implements Criterion<Student> {
+class FirstHalfStudent implements Predicate<Student> {
   @Override
   public boolean test(Student s) {
     return s.getName().charAt(0) <= 'M';
@@ -26,7 +29,8 @@ class FirstHalfStudent implements Criterion<Student> {
 }
 
 public class Main {
-  public static <E> List<E> filter(List<E> ls, Criterion<E> f) {
+  public static <E> List<E> filter(List<E> ls, Predicate<E> f) {
+//  public static <E> List<E> filter(List<E> ls, Criterion<E> f) {
     List<E> out = new ArrayList<>();
     for (E s : ls) {
       if (f.test(s)) {
@@ -71,7 +75,8 @@ public class Main {
     }
     new Something()
      */
-    Criterion<String> testObject =
+//    Criterion<String> testObject =
+    Predicate<String> testObject =
         (String s) -> { return s.length() > 3; };
 //    Object obj = (String s) -> { return s.length() > 3; };
     show(filter(
