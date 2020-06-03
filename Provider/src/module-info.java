@@ -1,0 +1,3 @@
+module Provider {
+  exports supplier;
+}
